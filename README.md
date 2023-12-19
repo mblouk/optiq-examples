@@ -2,20 +2,20 @@
 
 ## `scope`
 
-An example of a basic oscilloscope viewer
+An example of a basic oscilloscope viewer. 
 
 ### Content
 
-* `ui_scope.py`: Graphical skeleton
-* `ui_scope.ui`: Corresponding Designer file
-* `fake_scope.py`: Fake oscilloscope driver
-* `scope_viewer.py`: Main program for the viewer
+* `ui_scope.py`: Graphical skeleton.
+* `ui_scope.ui`: Corresponding Designer file.
+* `fake_scope.py`: Fake oscilloscope driver including the `FakeScope` class with the `current_plot` custom signal.
+* `scope_viewer.py`: Main program for the viewer including the `ScopeThread` class with the `new_plot` and the main `ScopeViewer` class. 
 
-### Signal/slots organisation
+### Signals/slots organisation
 
 1. In the `ScopeThread` class, the `run()` method calls the `get_plot()` method from the `FakeScope` class
 2. Consequently, the `current_plot` signal is emitted which triggers the `send_new_plot()` method
-3. The `send_new_plot()` call emits the `new_plot` signal which triggers the `display_new_plot()` method from the ScopeViewer class
+3. The `send_new_plot()` call emits the `new_plot` signal which triggers the `display_new_plot()` method from the `ScopeViewer` class
 
 
 
