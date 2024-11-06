@@ -56,7 +56,7 @@ class ScopeViewer(QtWidgets.QWidget):
         self.scope = fake_scope.FakeScope()
         self.scope_thread = ScopeThread(self.scope)
         self.scope_thread.new_plot.connect(self.display_new_plot)
-        print("Camera connected")
+        print("Scope connected")
 
     def start(self):
         self.scope_thread.start_thread()
